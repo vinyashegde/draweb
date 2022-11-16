@@ -8,6 +8,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="drawingboard.css">
+
+    <!-- Bootstrap -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
@@ -33,7 +37,7 @@
 
                     });
             })
-            
+
         })
     </script>
 </head>
@@ -65,11 +69,25 @@
                         <h2>todo list</h2>
                     </div>
                     <div class="card__body">
-                        <h3>Hey</h3>
+
+
+                        <div class="container">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="" id="itemInput" >
+                                </div>
+                                    <button id="addButton" class="btn btn-primary">Add To List</button>
+                                    <button id="clearButton" class="btn btn-danger">Clear Todo List</button>
+                            <h3>Todo List</h3>
+                            <ul id="todoList"></ul>
+                    
+                        </div>
+
+
+
                         <div class="button-container2">
                             <button class="butt1">flip</button>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
