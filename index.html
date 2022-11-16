@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="drawingboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawingboard.js/0.4.6/drawingboard.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var imageBoard = new DrawingBoard.Board('div', {
+                controls: [
+                    'Color',
+                    { Size: { type: 'dropdown' } },
+                    { DrawingMode: { filler: false } },
+                    'Navigation',
+                    'Download'
+                ],
+                size: 1,
+                webStorage: 'session',
+                enlargeYourContainer: true
+            });
+            $("#button").click(function () {
+                domtoimage.toBlob(document.getElementById('div'))
+                    .then(function (blob) {
+                        window.saveAs(blob, 'pix.png');
+
+                    });
+            })
+            
+        })
+    </script>
+</head>
+<style>
+    #div {
+        width: 850px;
+        height: 520px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+
+    <div class="card">
+        <div class="card__inner">
+            <div class="card__face card__face--front">
+                <div id="div"></div>
+                <div class="button-container">
+                    <button class="butt">flip</button>
+                </div>
+                <!--
+                <button id="button">Take Image</button>
+                <button class="butt">flipppp</button>
+                -->
+            </div>
+            <div class="card__face card__face--back">
+                <div class="card__content">
+                    <div class="card__header">
+                        <h2>todo list</h2>
+                    </div>
+                    <div class="card__body">
+                        <h3>Hey</h3>
+                        <button class="butt1">flipppp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="web.js"></script>
+</body>
+
+</html>
