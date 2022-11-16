@@ -125,11 +125,17 @@
   }
 
   .button-container{
-    top: 50px;
+    padding-top: 520px;
+    padding-left: 25px;
+  }
+
+  .button-container2{
+    padding-top: 345px;
+    padding-left: 870px;
   }
 
   .butt{
-    background-color: #4a65fd; /* Green */
+    background-color: #4a65fd; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -137,11 +143,12 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    
    
   }
 
   .butt1{
-    background-color: #4a65fd; /* Green */
+    background-color: #4a65fd;
     border: none;
     color: white;
     padding: 15px 32px;
